@@ -23,9 +23,9 @@ class PostApiController extends Controller
     // store articles
     public function store(Request $request) {
         $request->validate([
-            'title'     => ['required', 'max:200'],
-            'content'   => ['required'],
-            'category'  => ['required', 'max:100'],
+            'title'     => ['required', 'min:20','max:200'],
+            'content'   => ['required', 'min:200'],
+            'category'  => ['required', 'min:3','max:100'],
             'status'    => ['required'],
         ]);
         
@@ -69,9 +69,9 @@ class PostApiController extends Controller
     // update articles
     public function update(Request $request, $id) {
         $request->validate([
-            'title'     => ['required', 'max:200'],
-            'content'   => ['required'],
-            'category'  => ['required', 'max:100'],
+            'title'     => ['required', 'min:20','max:200'],
+            'content'   => ['required', 'min:200'],
+            'category'  => ['required', 'min:3','max:100'],
             'status'    => ['required'],
         ]);
 
